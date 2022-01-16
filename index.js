@@ -16,12 +16,11 @@ client.on("ready", () => {
 })
 
 client.on("messageCreate", msg => {
-  if (msg.author.bot) return;
-  const content = msg.content.toLowerCase()
-  if (content === 'fuck'){
-    msg.delete();
-    msg.channel.send('This is a Christian server.');
-      
+    if (msg.author.bot) return;
+    else if (msg.content.toLowerCase().includes('fuck')){
+        msg.channel.send('This is a Christian server.');
+        console.log(msg)
+        msg.delete();
   }
 })
 
